@@ -7,8 +7,12 @@
  
 apply plugin: 'java'
 //apply from: 'bin/build/repo.gradle'
+
 def VERSIONS ='SNAPSHORT'
 def baseDir = rootProject.projectDir
+sourceCompatibility = 11
+
+
 ext{
    println "${baseDir}"
    println "${baseDir}\\gradle-plugin\\cxbuild.gradle"
