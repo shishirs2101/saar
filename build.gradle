@@ -57,6 +57,8 @@ dependencies {
     compile group: 'org.apache.tomcat.embed', name: 'tomcat-embed-jasper', version: '9.0.35'
     compile group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.5.Final'
     compile group: 'org.passay', name: 'passay', version: '1.6.0'
+    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
+
 
 
 }

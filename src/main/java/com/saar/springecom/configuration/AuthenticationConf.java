@@ -42,7 +42,9 @@ public class AuthenticationConf extends WebSecurityConfigurerAdapter {
                 .usernameParameter("username")
                 .passwordParameter("password")
                 .defaultSuccessUrl("/v1/dashboard",true)
-                .failureUrl("/v1/registration")
+                .permitAll()
+                .and()
+                .logout()
                 .permitAll();
     }
 

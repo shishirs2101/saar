@@ -7,5 +7,6 @@
         </head>
         <body>
            <h1>welcome to code saar </h1>
+           <br><a href="/logout">logout</a>
         </body>
         </html>

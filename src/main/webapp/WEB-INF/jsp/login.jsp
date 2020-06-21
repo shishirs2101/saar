@@ -1,4 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
     <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
         <html>
         <head>
@@ -8,6 +10,13 @@
         <body>
             <form id="login" action="/v1/userAuthenticate" method="POST">
                 <table align="center">
+                <tr>
+                <td>
+                <c:if test="${param.error!=null}">
+                <i>Invalid username or password !!!</i>
+                </c:if>
+                </td>
+                </tr>
                     <tr>
                         <td>
                             <label path="username">UserName</label>
@@ -28,6 +37,9 @@
                         <td></td>
                         <td>
                            <button type="submit">Login</button>
+                        </td>
+                        <td>
+                            <a href="/logout">logout</a>
                         </td>
                     </tr>
                     <tr></tr>
