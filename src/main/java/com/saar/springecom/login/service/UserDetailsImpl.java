@@ -1,14 +1,13 @@
 package com.saar.springecom.login.service;
 
 import com.saar.springecom.login.dao.UserDetailsDao;
-import com.saar.springecom.login.dto.UserDetailsDto;
 import com.saar.springecom.login.model.UserDetails;
 import com.saar.springecom.login.service.impl.IUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,6 +17,7 @@ public class UserDetailsImpl implements IUserDetails {
 
     @Autowired
     UserDetailsDao userDetailsDao;
+
 
     @Override
     public UserDetails save(UserDetails userDetails) {
@@ -30,7 +30,7 @@ public class UserDetailsImpl implements IUserDetails {
     @Override
     public Optional<UserDetails> findById(Integer id) {
         Optional<UserDetails> byId = findById(id);
-        return byId.isEmpty()? Optional.empty() :byId;
+        return byId.isPresent()? Optional.empty() :byId;
     }
     @Override
     public boolean existsById(Integer id) {

@@ -32,6 +32,15 @@
                     </tr>
                     <tr>
                         <td>
+                            <form:label path="password">Create a password</form:label>
+                        </td>
+                        <td>
+                            <form:input path="password" name="password" />
+                            <form:errors path="password" cssClass="error" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <form:label path="pri_contact_no">Primary Contact NO</form:label>
                         </td>
                         <td>
@@ -61,8 +70,17 @@
                             <form:label path="dob">DOB</form:label>
                         </td>
                         <td>
-                            <form:input path="dob" name="dob" id="dob" />
+                            <form:input path="dob" name="dob" />
                             <form:errors path="dob" cssClass="error" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <form:label path="Role">Role</form:label>
+                        </td>
+                        <td>
+                            <form:input path="role" name="role" />
+                            <form:errors path="role" cssClass="error" />
                         </td>
                     </tr>
                     <tr>

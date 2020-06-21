@@ -1,10 +1,9 @@
 package com.saar.springecom.login.dto;
 
 
-import org.hibernate.validator.constraints.Length;
+import com.saar.springecom.annotations.ValidPassword;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.ModelAttribute;
 
 import javax.validation.constraints.*;
 import java.util.Date;
@@ -30,6 +29,27 @@ public class UserDetailsDto {
     @DateTimeFormat(pattern = "yyyy-mm-dd")
     private Date dob;
     private String address;
+
+    @ValidPassword
+    private String password;
+
+    private String role;
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -79,19 +99,17 @@ public class UserDetailsDto {
         this.address = address;
     }
 
-
-
-
-
     @Override
     public String toString() {
         return "UserDetailsDto{" +
-                ", name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", emailId='" + emailId + '\'' +
-                ", pri_contact_no=" + pri_contact_no +
-                ", sec_contact_no=" + sec_contact_no +
+                ", pri_contact_no='" + pri_contact_no + '\'' +
+                ", sec_contact_no='" + sec_contact_no + '\'' +
                 ", dob=" + dob +
                 ", address='" + address + '\'' +
+                ", password='" + password + '\'' +
+                ", role='" + role + '\'' +
                 '}';
     }
 }

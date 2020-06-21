@@ -1,7 +1,6 @@
 package com.saar.springecom.login.service.impl;
 
 
-import com.saar.springecom.login.dto.UserDetailsDto;
 import com.saar.springecom.login.model.UserDetails;
 
 import java.util.List;
@@ -21,13 +20,4 @@ public interface IUserDetails {
     public void delete(UserDetails entity);
     public void deleteAll(List<UserDetails> userDetails);
     public void deleteAll();
-
-    default  public void setUserDetail(UserDetailsDto userDetailsDto, UserDetails userDetails){
-        userDetails.setAddress(userDetailsDto.getAddress());
-        userDetails.setDob(userDetailsDto.getDob());
-        userDetails.setEmailId(userDetailsDto.getEmailId());
-        userDetails.setPri_contact_no(userDetailsDto.getPri_contact_no());
-        userDetails.setSec_contact_no(userDetailsDto.getSec_contact_no());
-        userDetails.setName(userDetailsDto.getName());
-    }
 }

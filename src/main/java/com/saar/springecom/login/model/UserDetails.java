@@ -1,5 +1,7 @@
 package com.saar.springecom.login.model;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -11,15 +13,14 @@ import java.util.Date;
 @Component
 public class UserDetails {
 
-
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Transient
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
     @Column(name = "name")
     private String name;
 
+    @Id
     @Column(name = "email_id")
     private String emailId;
 
@@ -35,13 +36,28 @@ public class UserDetails {
     @Column(name = "address")
     private String address;
 
+    @Column(name = "password")
+    private String password;
 
-    public int getId() {
-        return id;
+
+    @JoinColumn(name = "role_id",referencedColumnName = "email_id")
+    @OneToOne(cascade = CascadeType.ALL)
+    private Authorities authorities;
+
+    public Authorities getAuthorities() {
+        return authorities;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAuthorities(Authorities authorities) {
+        this.authorities = authorities;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password =passwordEncoder.encode(password);
     }
 
     public String getName() {
@@ -90,5 +106,22 @@ public class UserDetails {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+
+    @Override
+    public String toString() {
+        return "UserDetails{" +
+                "passwordEncoder=" + passwordEncoder +
+                ", name='" + name + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", pri_contact_no='" + pri_contact_no + '\'' +
+                ", sec_contact_no='" + sec_contact_no + '\'' +
+                ", dob=" + dob +
+                ", address='" + address + '\'' +
+                ", password='" + password + '\'' +
+                ", authorities_emailId=" + authorities.getEmailId() +
+                ", authorities_role=" + authorities.getAuthority() +
+                '}';
     }
 }

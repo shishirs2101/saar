@@ -6,32 +6,32 @@
             <title>Registration</title>
         </head>
         <body>
-            <form:form id="regForm"  action="saveUserDetails" method="post">
+            <form id="login" action="/v1/userAuthenticate" method="POST">
                 <table align="center">
                     <tr>
                         <td>
-                            <form:label path="name">UserName</form:label>
+                            <label path="username">UserName</label>
                         </td>
                         <td>
-                            <form:input path="name" name="name" id="name" />
+                             <input type="text" placeholder="Enter Username" name="username" required>
                         </td>
                     </tr>
                     <tr>
                         <td>
-                            <form:label path="password">Password</form:label>
+                            <label path="password">Password</label>
                         </td>
                         <td>
-                            <form:password path="password" name="password" id="password" />
+                           <input type="text" placeholder="Enter password" name="password" required>
                         </td>
                     </tr>
                     <tr>
                         <td></td>
                         <td>
-                            <form:button id="register" name="register">Register</form:button>
+                           <button type="submit">Login</button>
                         </td>
                     </tr>
                     <tr></tr>
                 </table>
-            </form:form>
+            </form>
         </body>
         </html>
