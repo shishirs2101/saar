@@ -1,4 +1,4 @@
-package com.saar.springecom.login.service.impl;
+package com.saar.springecom.login.service;
 
 import com.saar.springecom.login.model.Authorities;
 import com.saar.springecom.login.model.Authorities;

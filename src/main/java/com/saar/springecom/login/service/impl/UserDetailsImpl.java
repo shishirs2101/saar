@@ -1,8 +1,8 @@
-package com.saar.springecom.login.service;
+package com.saar.springecom.login.service.impl;
 
 import com.saar.springecom.login.dao.UserDetailsDao;
 import com.saar.springecom.login.model.UserDetails;
-import com.saar.springecom.login.service.impl.IUserDetails;
+import com.saar.springecom.login.service.IUserDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

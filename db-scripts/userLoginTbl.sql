@@ -24,3 +24,4 @@ CREATE TABLE `authorities` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
+
